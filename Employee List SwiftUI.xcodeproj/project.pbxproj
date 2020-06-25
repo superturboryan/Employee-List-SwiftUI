@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940A1CBC24A40F5300793639 /* EmployeeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A1CBB24A40F5300793639 /* EmployeeDetailView.swift */; };
+		940A1CBF24A42FC500793639 /* ImageViewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A1CBE24A42FC500793639 /* ImageViewWidget.swift */; };
 		9427CD4924A3E07A00183E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9427CD4824A3E07A00183E01 /* AppDelegate.swift */; };
 		9427CD4B24A3E07A00183E01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9427CD4A24A3E07A00183E01 /* SceneDelegate.swift */; };
-		9427CD4D24A3E07A00183E01 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9427CD4C24A3E07A00183E01 /* MainListView.swift */; };
+		9427CD4D24A3E07A00183E01 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9427CD4C24A3E07A00183E01 /* EmployeeListView.swift */; };
 		9427CD4F24A3E07C00183E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9427CD4E24A3E07C00183E01 /* Assets.xcassets */; };
 		9427CD5224A3E07C00183E01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9427CD5124A3E07C00183E01 /* Preview Assets.xcassets */; };
 		9427CD5524A3E07C00183E01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9427CD5324A3E07C00183E01 /* LaunchScreen.storyboard */; };
@@ -31,10 +33,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940A1CBB24A40F5300793639 /* EmployeeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailView.swift; sourceTree = "<group>"; };
+		940A1CBD24A42C2000793639 /* Employee List SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Employee List SwiftUI.entitlements"; sourceTree = "<group>"; };
+		940A1CBE24A42FC500793639 /* ImageViewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWidget.swift; sourceTree = "<group>"; };
 		9427CD4524A3E07A00183E01 /* Employee List SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee List SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9427CD4824A3E07A00183E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9427CD4A24A3E07A00183E01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9427CD4C24A3E07A00183E01 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
+		9427CD4C24A3E07A00183E01 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
 		9427CD4E24A3E07C00183E01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9427CD5124A3E07C00183E01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9427CD5424A3E07C00183E01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,11 +95,14 @@
 				9427CD6A24A3E29A00183E01 /* Model */,
 				9427CD7124A3F6D300183E01 /* App Settings */,
 				9427CD7224A3FBD600183E01 /* EmployeeStore.swift */,
-				9427CD4C24A3E07A00183E01 /* MainListView.swift */,
+				9427CD4C24A3E07A00183E01 /* EmployeeListView.swift */,
+				940A1CBB24A40F5300793639 /* EmployeeDetailView.swift */,
+				940A1CBE24A42FC500793639 /* ImageViewWidget.swift */,
 				9427CD6F24A3F6BA00183E01 /* UIColor.swift */,
 				9427CD4E24A3E07C00183E01 /* Assets.xcassets */,
 				9427CD5324A3E07C00183E01 /* LaunchScreen.storyboard */,
 				9427CD5624A3E07C00183E01 /* Info.plist */,
+				940A1CBD24A42C2000793639 /* Employee List SwiftUI.entitlements */,
 				9427CD5024A3E07C00183E01 /* Preview Content */,
 			);
 			path = "Employee List SwiftUI";
@@ -238,11 +246,13 @@
 			files = (
 				9427CD4924A3E07A00183E01 /* AppDelegate.swift in Sources */,
 				9427CD7024A3F6BA00183E01 /* UIColor.swift in Sources */,
+				940A1CBC24A40F5300793639 /* EmployeeDetailView.swift in Sources */,
 				9427CD6D24A3E2B300183E01 /* Employee.swift in Sources */,
 				9427CD4B24A3E07A00183E01 /* SceneDelegate.swift in Sources */,
 				9427CD6E24A3E2B300183E01 /* EmployeeViewModel.swift in Sources */,
 				9427CD7324A3FBD600183E01 /* EmployeeStore.swift in Sources */,
-				9427CD4D24A3E07A00183E01 /* MainListView.swift in Sources */,
+				9427CD4D24A3E07A00183E01 /* EmployeeListView.swift in Sources */,
+				940A1CBF24A42FC500793639 /* ImageViewWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Employee List SwiftUI/Employee List SwiftUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Employee List SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = T6MXF72738;
@@ -405,6 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Employee-List-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -414,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Employee List SwiftUI/Employee List SwiftUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Employee List SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = T6MXF72738;
@@ -425,6 +438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RyanDF.Employee-List-SwiftUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

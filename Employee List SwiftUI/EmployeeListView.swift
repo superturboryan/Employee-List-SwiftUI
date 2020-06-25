@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MainListView: View {
+struct EmployeeListView: View {
     
     @ObservedObject var employeeStore = EmployeesStore()
     
@@ -16,21 +16,32 @@ struct MainListView: View {
         NavigationView{
             List {
                 ForEach(employeeStore.employeeList, id: \.nameLabel) {viewModel in
-                    EmployeeCell(viewModel: viewModel)
+                    NavigationLink(destination: EmployeeDetailView(viewModel: viewModel)) {
+                        EmployeeCell(viewModel: viewModel)
+                    }
                 }
-            }.navigationBarTitle("Employee Directory")
-                .navigationBarItems(
-                    leading: Button(action: {
-                    self.employeeStore.clearList()
-                }, label: {
-                    Text("Clear")
-                }),
-                    trailing: Button(action: {
-                self.employeeStore.fetchEmployeeList()
+                if employeeStore.employeeList.count != 0 {
+                    HStack {
+                        Spacer()
+                        Text("\(employeeStore.employeeList.count) employees")
+                            .font(.subheadline)
+                        Spacer()
+                    }
+                }
+                EmptyView()
+            }
+            .navigationBarTitle("Employee Directory")
+            .navigationBarItems(
+                leading: Button(action: {
+                self.employeeStore.addExampleEmployee()
+            }, label: {
+                Text("Add")
+            }),
+                trailing: Button(action: {
+            self.employeeStore.fetchEmployeeList()
             }, label: {
                 Text("Fetch List")
             }))
-
         }
     }
 }
@@ -43,12 +54,8 @@ struct EmployeeCell: View {
         
         HStack(spacing: 10) {
             
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 50, height: 50, alignment: .center)
-                .aspectRatio(contentMode: .fill)
-                .foregroundColor(Color.squareBlue())
-
+            ImageViewWidget(imageUrl: viewModel.smallUrl)
+                .frame(width: 50, height: 50)
             
             VStack(alignment: .leading) {
                 
@@ -66,8 +73,11 @@ struct EmployeeCell: View {
     }
 }
 
+
+
+//MARK: Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainListView()
+        EmployeeListView()
     }
 }

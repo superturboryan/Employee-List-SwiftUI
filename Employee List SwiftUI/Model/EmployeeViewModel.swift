@@ -13,14 +13,29 @@ struct EmployeeViewModel {
     var nameLabel: String
     var emailLabel: String
     var teamLabel: String
-    var imageId: String?
+    var biography: String?
+    var smallUrl: String?
+    var largeUrl: String?
+    var phoneNumber: String?
+    var typeLabel: String
     
     init(using model: Employee) {
         nameLabel = model.fullName
         emailLabel = model.emailAddress
         teamLabel = model.team
-        if let url = model.photoUrlSmall {
-            imageId = EmployeeViewModel.parseImageIdFromUrl(url)
+        typeLabel = String(model.type.rawValue.capitalized).replacingOccurrences(of: "_", with: " ")
+        
+        if let sUrl = model.photoUrlSmall {
+            smallUrl = sUrl
+        }
+        if let lUrl = model.photoUrlLarge {
+            largeUrl = lUrl
+        }
+        if let bio = model.biography {
+            biography = bio
+        }
+        if let phone = model.phoneNumber {
+            phoneNumber = phone
         }
     }
     

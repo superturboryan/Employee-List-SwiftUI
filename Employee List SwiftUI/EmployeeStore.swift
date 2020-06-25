@@ -13,7 +13,7 @@ class EmployeesStore: ObservableObject {
     @Published var employeeList = [EmployeeViewModel]()
     
     init() {
-        self.fetchEmployeeList()
+//        self.fetchEmployeeList()
     }
     
     func fetchEmployeeList() {
@@ -27,7 +27,11 @@ class EmployeesStore: ObservableObject {
             do {
                 let employeeResult = try JSONDecoder().decode(EmployeeResult.self, from: data)
                 DispatchQueue.main.async {
-                    self.employeeList =  employeeResult.employees.map({ return EmployeeViewModel(using: $0)})
+                    self.employeeList =  employeeResult.employees
+                        .map({ return EmployeeViewModel(using: $0)})
+                        .sorted(by: { (a, b) -> Bool in
+                            a.nameLabel.compare(b.nameLabel) == .orderedAscending
+                        })
                 }
             }
             catch {
@@ -36,7 +40,7 @@ class EmployeesStore: ObservableObject {
         }.resume()
     }
     
-    func clearList() {
-        self.employeeList = []
+    func addExampleEmployee() {
+        self.employeeList.append(EmployeeViewModel(using: Employee(id: UUID(), fullName: "Ryan Forsyth", phoneNumber: "514 707 7230", emailAddress: "forsyth.r@gmail.com", biography: "SwiftUI Developer", photoUrlSmall: nil, photoUrlLarge: nil, team: "Development", type: .FULL_TIME)))
     }
 }
